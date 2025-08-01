@@ -5,12 +5,26 @@ export default function AppBar() {
         <img
           src="/sak-logo.png"
           alt="sAk Logo"
-          className="sm:w-18 w-15 sm:h-18 h-15"
+          className="sm:w-18 w-15 sm:h-18 h-15 sm:hidden"
+        />
+        <img
+          src="/sak-logo-white.png"
+          alt="sAk Logo"
+          className="sm:w-18 w-15 sm:h-18 h-15 hidden sm:block"
         />
       </div>
       <div className="flex flex-col justify-center hover:scale-110 transition-all">
-        <div className="flex justify-center items-center h-17 sm:w-17 w-15">
-          <img src={"/phone.png"} alt="WhatsApp" className="w-8 h-8" />
+        <div className="flex justify-center items-center h-17 sm:w-17 w-15 text-white">
+          <img
+            src={"/whatsApp.png"}
+            alt="WhatsApp"
+            className="w-8 h-8 sm:hidden"
+          />
+          <img
+            src={"/whatsAppPC.png"}
+            alt="WhatsApp"
+            className="hidden sm:block w-8 h-8"
+          />
         </div>
       </div>
     </div>
