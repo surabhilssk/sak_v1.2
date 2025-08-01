@@ -1,11 +1,9 @@
-import AppBar from "@/components/AppBar";
-import LandingPage from "@/components/LandingPage";
+import MainPage from "@/components/MainPage";
 
 export default function Home() {
   return (
-    <div>
-      <AppBar />
-      <LandingPage />
+    <div className="bg-gray-800">
+      <MainPage />
     </div>
   );
 }
