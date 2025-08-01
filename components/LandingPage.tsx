@@ -2,8 +2,9 @@
 import { useRef } from "react";
 import { Damion } from "next/font/google";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
+import { gsap, random } from "gsap";
 import { SplitText } from "gsap/SplitText";
+
 gsap.registerPlugin(SplitText);
 
 const damionFont = Damion({
@@ -20,32 +21,49 @@ export default function LandingPage() {
       type: "chars",
     });
     let subSplit = SplitText.create(subRef.current, {
-      type: "lines",
+      type: "words",
     });
     const tl = gsap.timeline();
     tl.from(headSplit.chars, {
-      delay: 1.5,
-      y: 100,
+      delay: 0.5,
+      yPercent: "random(-100, 100)",
+      rotation: "random(0, 30)",
       autoAlpha: 0,
       stagger: 0.1,
+      duration: 0.6,
+      mask: "chars",
       ease: "back.out",
     });
-    tl.from(subSplit.lines, {
-      y: 100,
+    tl.from(subSplit.words, {
+      yPercent: 100,
+      mask: "words",
       autoAlpha: 0,
+      duration: 0.5,
       stagger: 0.1,
     });
   });
 
   return (
     <div>
-      <div className="bg-amber-100 ">
-        <div className="sm:p-2 h-screen">
-          <div className="bg-[url('/HeroBg.jpg')] bg-cover border h-full sm:rounded-2xl flex flex-col justify-center items-center">
-            <div className={`${damionFont.className} text-9xl`} ref={headRef}>
+      <div>
+        <div className="sm:p-2 h-screen relative">
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+          >
+            <source src="/landingVideo.mp4" type="video/mp4" />
+            Your browser doesn't support the video tag.
+          </video>
+          <div className="relative z-10 flex flex-col justify-center items-center h-full sm:rounded-2xl backdrop-blur-sm">
+            <div
+              className={`${damionFont.className} text-9xl text-white`}
+              ref={headRef}
+            >
               sAk
             </div>
-            <div className="text-2xl" ref={subRef}>
+            <div className="text-3xl font-medium text-white" ref={subRef}>
               Builders & Designers
             </div>
           </div>
