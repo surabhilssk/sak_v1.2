@@ -19,11 +19,13 @@ export default function MainPage() {
       wrapper: smoothParentRef.current,
       content: smoothChildRef.current,
       speed: 1,
+      normalizeScroll: true,
+      smoothTouch: 0.1,
     });
   });
 
   return (
-    <div ref={smoothParentRef}>
+    <div ref={smoothParentRef} className="bg-amber-50">
       <div ref={smoothChildRef}>
         <AppBar />
         <LandingPage />
