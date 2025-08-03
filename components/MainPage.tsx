@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import Services from "./Services";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -30,6 +31,7 @@ export default function MainPage() {
         <AppBar />
         <LandingPage />
         <CatchPhrase />
+        <Services />
       </div>
     </div>
   );
