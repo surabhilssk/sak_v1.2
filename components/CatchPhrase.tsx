@@ -12,10 +12,9 @@ export default function CatchPhrase() {
 
   useGSAP(() => {
     gsap.to(subRef.current, {
-      transform: "translateX(-70%)",
+      transform: "translateX(-80%)",
       scrollTrigger: {
         trigger: headRef.current,
-        markers: true,
         start: "-1.2% top",
         end: "-1.2% -150%",
         scrub: 1,
@@ -33,7 +32,7 @@ export default function CatchPhrase() {
         ref={subRef}
         className="flex flex-col justify-center text-7xl sm:text-[15rem] font-semibold whitespace-nowrap"
       >
-        Let's Build Your Dream Together
+        LET'S BUILD YOUR DREAM TOGETHER
       </div>
     </div>
   );
