@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { Damion } from "next/font/google";
 import { useGSAP } from "@gsap/react";
-import { gsap, random } from "gsap";
+import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
@@ -45,10 +45,10 @@ export default function LandingPage() {
 
   return (
     <div>
-      <div>
-        <div className="sm:p-2 h-screen relative">
+      <div className="bg-amber-50">
+        <div className="sm:p-3 h-svh sm:h-screen relative">
           <video
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover sm:p-2 sm:rounded-3xl"
             autoPlay
             loop
             muted
