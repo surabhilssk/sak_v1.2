@@ -25,7 +25,7 @@ export default function LandingPage() {
     });
     const tl = gsap.timeline();
     tl.from(headSplit.chars, {
-      delay: 0.5,
+      delay: 0.3,
       yPercent: "random(-100, 100)",
       rotation: "random(0, 30)",
       autoAlpha: 0,
