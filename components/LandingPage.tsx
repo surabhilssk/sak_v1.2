@@ -17,30 +17,36 @@ export default function LandingPage() {
   const subRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    let headSplit = SplitText.create(headRef.current, {
+    const headSplit = SplitText.create(headRef.current, {
       type: "chars",
     });
-    let subSplit = SplitText.create(subRef.current, {
+    const subSplit = SplitText.create(subRef.current, {
       type: "words",
     });
+
     const tl = gsap.timeline();
     tl.from(headSplit.chars, {
-      delay: 0.3,
       yPercent: "random(-100, 100)",
       rotation: "random(0, 30)",
+      delay: 0.1,
       autoAlpha: 0,
       stagger: 0.1,
       duration: 0.6,
-      mask: "chars",
       ease: "back.out",
-    });
-    tl.from(subSplit.words, {
-      yPercent: 100,
-      mask: "words",
-      autoAlpha: 0,
-      duration: 0.5,
-      stagger: 0.1,
-    });
+    }).from(
+      subSplit.words,
+      {
+        yPercent: 100,
+        autoAlpha: 0,
+        duration: 0.5,
+        stagger: 0.1,
+      },
+      "-=0.2"
+    );
+    return () => {
+      headSplit.revert();
+      subSplit.revert();
+    };
   });
 
   return (
@@ -54,7 +60,7 @@ export default function LandingPage() {
             muted
           >
             <source src="/landingVideo.mp4" type="video/mp4" />
-            Your browser doesn't support the video tag.
+            Your browser does not support the video tag.
           </video>
           <div className="relative z-10 flex flex-col justify-center items-center h-full sm:rounded-2xl backdrop-blur-sm">
             <div

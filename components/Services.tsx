@@ -13,7 +13,7 @@ export default function Services() {
   const headRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    let split = SplitText.create(headRef.current, {
+    const split = SplitText.create(headRef.current, {
       type: "chars",
     });
     const tl = gsap.timeline({

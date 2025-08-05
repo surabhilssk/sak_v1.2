@@ -33,7 +33,7 @@ export default function CatchPhrase() {
         ref={subRef}
         className="flex flex-col justify-center text-7xl sm:text-[15rem] font-semibold whitespace-nowrap"
       >
-        LET'S BUILD YOUR DREAM TOGETHER.
+        LET&apos;S BUILD YOUR DREAM TOGETHER.
       </div>
       <div
         ref={descRef}

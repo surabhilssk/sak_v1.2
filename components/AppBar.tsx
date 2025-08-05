@@ -14,7 +14,12 @@ export default function AppBar() {
         />
       </div>
       <div className="flex flex-col justify-center hover:scale-110 transition-all">
-        <div className="flex justify-center items-center h-17 sm:w-17 w-15 text-white">
+        <div
+          className="flex justify-center items-center h-17 sm:w-17 w-15 text-white cursor-pointer"
+          onClick={() => {
+            window.open("https://wa.me/+919366269257", "_blank");
+          }}
+        >
           <img
             src={"/whatsApp.png"}
             alt="WhatsApp"
