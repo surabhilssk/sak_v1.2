@@ -1,6 +1,6 @@
 export default function AppBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 flex justify-between sm:px-9 sm:py-4 py-2">
+    <div className="absolute sm:fixed top-0 left-0 right-0 z-40 flex justify-between sm:px-9 sm:py-4 py-2">
       <div className="flex flex-col justify-center">
         <img
           src="/sak-logo.png"
