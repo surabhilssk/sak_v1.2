@@ -25,7 +25,6 @@ export default function Services() {
     });
     tl.from(split.chars, {
       yPercent: "100",
-      mask: "chars",
       duration: 0.8,
       stagger: 0.05,
       autoAlpha: 0,
