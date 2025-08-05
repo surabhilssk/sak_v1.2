@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Services from "./Services";
+import Footer from "./Footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -21,7 +22,7 @@ export default function MainPage() {
       content: smoothChildRef.current,
       speed: 1,
       normalizeScroll: true,
-      smoothTouch: 0.1,
+      // smoothTouch: 0.07,
     });
   });
 
@@ -32,6 +33,7 @@ export default function MainPage() {
         <LandingPage />
         <CatchPhrase />
         <Services />
+        <Footer />
       </div>
     </div>
   );
